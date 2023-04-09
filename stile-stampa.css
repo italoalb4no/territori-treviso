@@ -1,0 +1,171 @@
+/* Dimensione foglio: 148mm x 105mm */
+
+body {
+	font-family: sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+#fronte {
+	visibility: hidden;
+}
+
+#fronte, #mappa {
+	position: absolute;
+}
+#fronte.m2x, #mappa.m2x {
+	width: 320mm; /* 160mm x 2 */
+	height: 226mm; /* 113mm x 2 */
+}
+#fronte.m3x, #mappa.m3x {
+	width: 480mm; /* 160mm x 3 */
+	height: 339mm; /* 113mm x 3 */
+}
+
+#controlli {
+	position: absolute;
+}
+#controlli.m2x {
+	position: absolute;
+	left: 330mm;
+}
+#controlli.m3x {
+	left: 490mm;
+}
+
+@media only print {
+	#controlli {
+		visibility: hidden;
+	}
+	#fronte {
+		visibility: visible;
+	}
+	#mappa {
+		border: 1px solid #bbb;
+	}
+	#mappa.m2x {
+		top: 226mm; /* 113mm x 2 */
+	}
+	#mappa.m3x {
+		top: 339mm; /* 113mm x 3 */
+	}
+}
+
+#headerStampa {
+	width: 100.1%;
+	top: 1em;
+}
+#headerStampa.m2x {
+	height: 20mm;
+	font-size: 26pt;
+}
+#headerStampa.m3x {
+	height: 30mm;
+	font-size: 39pt;
+}
+
+#footerStampa {
+	width: 99.85%;
+	height: 20mm;
+	position: absolute;
+  	bottom: 0;
+}
+#footerStampa.m2x {
+	width: 99.85%;
+	border: 1px solid #bbb;
+	height: 20mm;
+	font-size: 16pt;
+}
+#footerStampa.m3x {
+	border: 1.5px solid #bbb;
+	height: 30mm;
+	font-size: 24pt;
+}
+
+#footerStampa.m2x div {
+	margin: 3mm;
+}
+#footerStampa.m3x div {
+	margin: 4.5mm;
+}
+
+td {
+	border: 1px solid #bbb;
+}
+
+#cellaNumeroTerritorio {
+	width: 6.7em;
+	text-align: right;
+	padding-right: 0.5em;
+	color: grey;
+}
+
+#cellaNumeroTerritorio {
+	width: 6.7em;
+	text-align: right;
+	padding-right: 0.5em;
+	color: grey;
+}
+
+#nomeTerritorio, #comuneTerritorio {
+	padding-left: 0.5em;
+}
+
+#comuneTerritorio {
+	color: grey;
+}
+
+#fronte.m2x .numero-nominativi {
+	width: 20mm;
+}
+#fronte.m3x .numero-nominativi {
+	width: 30mm;
+}
+
+#nonVisitare th {
+	font-weight: bold;
+	padding-top: 1.5em;
+	padding-bottom: 0.5em;
+}
+#nonVisitare.m2x th {
+	font-size: 30pt;
+}
+#nonVisitare.m3x th {
+	font-size: 45pt;
+}
+
+#nonVisitare td {
+	padding: 0.4em 1em;
+}
+#nonVisitare.m2x td {
+	font-size: 24pt;
+}
+#nonVisitare.m3x td {
+	font-size: 32pt;
+}
+
+#templateNonVisitare {
+	visibility: collapse;
+}
+
+/* Ingrandisce bussola */
+.mapboxgl-ctrl-compass {
+    transform: scale(1.3);
+}
+#mappa.m2x .mapboxgl-ctrl-top-right {
+	transform: scale(1.5) !important;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+#mappa.m3x .mapboxgl-ctrl-top-right {
+	transform: scale(2.0) !important;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+/* Nasconde logo MapBox */
+.mapboxgl-ctrl-logo {
+	opacity: 0 !important;
+}
